@@ -1,0 +1,278 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	font-size: 18px;
+}
+
+.topmargin {
+  margin-top: 200px;
+}
+
+
+/*-----------Button styling----------------*/
+button {
+	padding: 12px 12px 12px 12px;
+	border-radius: 50px;
+	max-width: 200px;	
+	width: 90%;
+	color: white;
+	border: none;
+}
+
+button:hover {
+  opacity: 50%;
+}
+
+.buttongreen {
+  background-color: hsl(171, 66%, 44%);
+  border-bottom: 2px solid hsl(171, 66%, 34%);
+  box-shadow: 0 4px 8px 0 hsl(171, 66%, 80%), 0 6px 20px 0 hsl(171, 66%, 90%);
+}
+
+.buttonblue {
+  background-color: hsl(233, 100%, 69%);
+  border-bottom: 2px solid hsl(233, 100%, 59%);
+  box-shadow: 0 4px 8px 0 hsl(233, 100%, 80%), 0 6px 20px 0 hsl(233, 100%, 90%);
+}
+
+
+/*-------paragraph and heading styling---------*/
+h1, h2, h3 {
+	color: hsl(210, 10%, 33%);
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+p {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*--------Top Banner-------*/
+.banner {
+	width: 100%;
+	height: 300px;
+	background-image: url('../images/bg-header-mobile.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*---------------Bottom Navigation Menu--------------*/
+.btm-cnt {
+	background-color: lightgray;
+	height: auto;
+	padding: 30px 0px;
+	margin-top: 100px;
+}
+
+.navbar {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.navbar ul {
+	display: flex;
+	padding: 0px;
+}
+
+.navbar ul li {
+  list-style-type: none;
+  width: 200px;
+  text-align: center;
+}
+
+.btm-cnt, .navbar, .navbar ul {
+	flex-direction: column;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+/*---------------Grid Areas---------------*/
+.item {
+  margin: 0px;
+	text-align: center;
+}
+
+.item1 {grid-area: item1;}
+.button1 {grid-area: button1;}
+.button2 {grid-area: button2;}
+.button3 {grid-area: button3;}
+.button4 {grid-area: button4;}
+.snippet{grid-area: snippet;}
+.item2 {grid-area: item2;}
+.img2 {grid-area: img2;	align-self:center;}
+.item2a {grid-area: item2a;}
+.item2b {grid-area: item2b;}
+.item2c {grid-area: item2c;}
+.item3 {grid-area: item3;}
+.img3 {grid-area: img3;}
+.workflowtext {grid-area: workflowtext;}
+.workflow {grid-area: workflow;}
+.item4 {grid-area: item4;}
+.item4a {grid-area: item4a;}
+.item4b {grid-area: item4b;}
+.item4c {grid-area: item4c;}
+.item4d {grid-area: item4d;}
+.item4e {grid-area: item4e;}
+.item5 {grid-area: item5;}
+
+/*---------Mobile Grid Layout---------------*/
+.container {
+	padding: 0px 20px;
+	display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto;
+  justify-content: center;
+	justify-items: center;
+	align-content: center;
+	gap: 20px 20px;    
+  grid-template-areas:
+	  "item1"
+	  "button1"
+    "button2"
+    "snippet"
+    "img2"
+   	"item2a"
+   	"item2b"
+    "item2c"
+    "item3"
+	  "img3"
+	  "workflowtext"
+	  "workflow"
+    "item4"
+    "item5"
+	  "button3"
+	  "button4";
+}
+
+
+.flexitem {
+	max-width: 250px;
+	width: 100%;
+	height: auto;
+  margin: 5px;
+	flex: "0 1 125px";
+}
+
+
+.flexitem2 {
+	max-width: 1fr;
+	width: 100%;
+	height: auto;
+  margin: 5px;
+	flex: "0 1 125px";
+	text-align: center;
+}
+
+.flexcontainer {
+	display: flex;
+  flex-direction: column;
+	align-items: center;
+  gap: 50px 0px;
+  }
+
+.flexcontainer2 {
+	display: flex;
+  flex-direction: column;
+	align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.banner {
+		background-image: url('../images/bg-header-desktop.png');
+	}
+
+	.navbar {
+	display: flex;
+	justify-content: space-evenly;
+	}
+
+	.btm-cnt, .navbar, .navbar ul {
+	flex-direction: row;
+	}
+
+	.navbar ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify content: space-evenly;
+	}
+
+	.navbar ul li {
+  	text-align: left;
+	}
+
+/*Desktop Grid Container*/
+.container {
+  grid-template-columns: repeat(12, 1fr);
+	grid-template-areas:
+	"item1 item1 item1 item1 item1 item1 item1 item1 item1 item1 item1 item1"
+	". 	. 	. 	. 	button1	button1	button2	button2	.	.	.	." 
+	". 	. 	. 	. 	. 	. 	. 	. 	. 	. 	. 	."
+	". 	. 	. 	snippet snippet snippet snippet snippet snippet .	.	." 
+	"img2	img2	img2	img2	img2	img2	.	item2a	item2a	item2a	.	."
+	"img2	img2	img2	img2	img2	img2	.	item2a	item2a	item2a	.	."
+	"img2	img2	img2	img2	img2	img2	.	item2b	item2b	item2b	.	."
+	"img2	img2	img2	img2	img2	img2	.	item2b	item2b	item2b	.	."
+	"img2	img2	img2	img2	img2	img2	.	item2c	item2c	item2c	.	."
+	"img2	img2	img2	img2	img2	img2	.	item2c	item2c	item2c	.	."
+	".	.	.	item3	item3	item3	item3	item3	item3	.	.	."
+	".	.	.	img3	img3	img3	img3	img3	img3	.	.	."
+	".	.	.	.	workflowtext	workflowtext	workflowtext	workflowtext	.	.	.	."
+	"workflow	workflow	workflow	workflow	workflow	workflow	workflow	workflow	workflow	workflow	workflow	workflow"
+	"item4	item4	item4	item4	item4	item4	item4	item4	item4	item4	item4	item4"
+	".	.	.	item5	item5	item5	item5	item5	item5	.	.	."
+	". 	. 	. 	. 	button3	button3	button4	button4	.	.	.	." 
+	;
+}
+
+	button {
+	  width: 100%;
+  }
+
+	.item2a, .item2b, .item2c {
+		text-align: left;	
+  }
+    
+  .flexcontainer {
+    flex-direction: row;
+	  justify-content: space-evenly;
+	  width: 100%;
+   }
+
+  .flexcontainer2 {
+    flex-direction: row;
+	  justify-content: space-evenly;
+	  width: 100%;
+  }
+
+	.flexitem {
+	  max-width: 150px;
+	  width: 100%;
+	  height: auto;
+    margin: 5px;
+	  flex: "0 1 125px";
+  }
+
+	.flexitem2 {
+	  max-width: 375px;
+	  width: 100%;
+	  height: auto;
+    margin: 5px;
+	  flex: "0 1 125px";
+  }
+	
+}
